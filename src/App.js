@@ -54,15 +54,18 @@ function App() {
 			</div>
 			<div className={styles.listContainer}>
 				<h2 className={styles.listHeading}>Список:</h2>
-				<p className={styles.noMarginText} hidden={list.length > 0}>
-					Нет добавленных элементов
-				</p>
 				<ul className={styles.list}>
-					{list.map((item) => (
-						<li key={item.id} className={styles.listItem}>
-							{item.value}
-						</li>
-					))}
+					{list.length === 0 ? (
+						<p className={styles.noMarginText} hidden={list.length > 0}>
+							Нет добавленных элементов
+						</p>
+					) : (
+						list.map((item) => (
+							<li key={item.id} className={styles.listItem}>
+								{item.value}
+							</li>
+						))
+					)}
 				</ul>
 			</div>
 		</div>
