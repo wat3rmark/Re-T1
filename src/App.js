@@ -43,7 +43,7 @@ function App() {
 				Текущее значение <code className={styles.currentValue}>value</code>: "
 				<output className={styles.currentValue}>{value}</output>"
 			</p>
-			<div className={styles.error}>{error}</div>
+			{error && <div className={styles.error}>{error}</div>}
 			<div className={styles.buttonsContainer}>
 				<button className={styles.button} onClick={onInputButtonClick}>
 					Ввести новое
